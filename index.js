@@ -24,6 +24,21 @@ app.use(cors(
 },
              
 ));
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://frontenddd-production.up.railway.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  next();
+});
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://backendapi-production-f363.up.railway.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  next();
+});
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
