@@ -11,27 +11,13 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors(         
-{
-    origin: 'https://frontenddd-production.up.railway.app',
-    optionsSuccessStatus: 200,
-    credentials: true
-},          
-{
-    origin: 'https://backendapi-production-f363.up.railway.app',
-    optionsSuccessStatus: 200,
-    credentials: true
-},
-             
-));
+app.use(cors({
+  origin: ['https://frontenddd-production.up.railway.app', 'https://backendauth-production.up.railway.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+}));
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://frontenddd-production.up.railway.app, https://backendauth-production.up.railway.app');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  next();
-});
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
