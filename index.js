@@ -13,7 +13,7 @@ const app = express();
 // Middleware
 app.use(cors(         
 {
-    origin: 'https://frontenddd-production.up.railway.app/',
+    origin: 'https://frontenddd-production.up.railway.app',
     optionsSuccessStatus: 200,
     credentials: true
 },          
