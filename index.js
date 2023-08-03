@@ -20,7 +20,18 @@ app.use(cors({
     origin: 'http://localhost:7000',
     optionsSuccessStatus: 200,
     credentials: true
+},           
+{
+    origin: 'https://frontenddd-production.up.railway.app/',
+    optionsSuccessStatus: 200,
+    credentials: true
+},          
+{
+    origin: 'backendapi-production-f363.up.railway.app',
+    optionsSuccessStatus: 200,
+    credentials: true
 },
+             
 ));
 app.use(express.json());
 app.use(cookieParser());
