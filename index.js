@@ -27,7 +27,7 @@ app.use(cors({
     credentials: true
 },          
 {
-    origin: 'backendapi-production-f363.up.railway.app',
+    origin: 'https://backendapi-production-f363.up.railway.app',
     optionsSuccessStatus: 200,
     credentials: true
 },
