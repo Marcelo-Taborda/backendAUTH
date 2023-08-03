@@ -59,11 +59,7 @@ exports.login = async (req, res) => {
     });
 
     // Configurar la cookie con el token
-    res.cookie('token', token, {
-      httpOnly: true,
-      maxAge: 60 * 60 * 1000 * 24 * 60, // 1 hora
-      secure: process.env.NODE_ENV === 'production' ? true : false,
-    });
+    res.cookie('token', token);
 
     res.json({ message: 'Inicio de sesión exitoso', token });
     /* acceder a las cookie */
