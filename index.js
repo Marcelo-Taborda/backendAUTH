@@ -17,12 +17,6 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
-{
-    origin: 'http://localhost:7000',
-    optionsSuccessStatus: 200,
-    credentials: true
-},
-));
 app.use(express.json());
 app.use(cookieParser());
 /* usar: Access-Control-Allow-Origin */
