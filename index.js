@@ -12,15 +12,23 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['https://frontenddd-production.up.railway.app', 'https://backendauth-production.up.railway.app'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-}));
-
+    origin: 'http://localhost:5173',
+    optionsSuccessStatus: 200,
+    credentials: true
+}, 
+{
+    origin: 'http://localhost:7000',
+    optionsSuccessStatus: 200,
+    credentials: true
+},
+));
 app.use(express.json());
 app.use(cookieParser());
+/* usar: Access-Control-Allow-Origin */
+
 app.use(express.urlencoded({ extended: true }));
+
+
 
 // Conexión a la base de datos
 mongoose
