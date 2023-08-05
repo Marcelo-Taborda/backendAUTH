@@ -17,11 +17,6 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
-
-    origin: 'http://localhost:5173',
-    optionsSuccessStatus: 200,
-    credentials: true
-}, 
 {
     origin: 'http://localhost:7000',
     optionsSuccessStatus: 200,
