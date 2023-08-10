@@ -12,7 +12,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['https://frontenddd-production.up.railway.app', 'https://backendauth-production.up.railway.app'],
+  origin: ['https://frontenddd-production.up.railway.app', 'https://backendauth-production.up.railway.app', 'http://vps-3532642-x.dattaweb.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
